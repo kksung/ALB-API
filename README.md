@@ -99,13 +99,71 @@ nvm --version
 <img src="https://github.com/kksung/ALB-API/assets/110016279/c760922b-ceb6-40db-93ab-0094ac6074ea" width=850 height=200>
 
 - 로드밸런서 헬스체크 -> 대상그룹 Healthy 상태 설정
-  - 'curl -l http://1st-API-ALB-806911070.ap-northeast-2.elb.amazonaws.com:5000/'
+  - `curl -l http://1st-API-ALB-806911070.ap-northeast-2.elb.amazonaws.com:5000/`
 
 <br>
 
 <img src="https://github.com/kksung/ALB-API/assets/110016279/e866e65b-e6d2-478a-b3ab-5b0123e8d93b" width=800 height=400>
 
 - talend를 통한 통신 확인 -> Login - POST
+
+<br>
+
+## ALB HTTPS 보안 통신 설정
+<img src="https://github.com/kksung/ALB-API/assets/110016279/f5d87034-7779-483e-853a-33e0258877c6" width=750 height=100>
+
+- 가비아에서 도메인 구매 (ssgfinal1jo.shop)
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/a5f942ca-a4d3-4867-b682-d5d190b7614c" width=800 height=450>
+
+- Route53 도메인 인증 (AWS단에서 도메인 소유 인증) -> 호스팅 영역 생성
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/f7df3748-e701-491d-8231-544ed5a60d6e" width=800 height=300>
+
+- NS 유형의 라우팅 대상 4개 -> 가비아 들어가서 입력
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/9420f098-81a0-4023-ae1d-660667538153" width=850 height=330>
+
+- 서브도메인까지 포함되는 인증서 발급 (* -> 애스터리스크로 발급)
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/ee766b0a-e5be-4942-a428-bbfe8f70d898" width=800 height=450>
+
+- 서브도메인 A레코드 생성 -> 각 LB별로 지정
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/1a152bcc-5162-44b2-91d0-750ed48e8a14" width=830 height=500>
+
+- 예시, 서브도메인별로 A레코드 생성 -> LB별 지정 확인
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/a46b4158-b4e7-4446-a77c-4e387f0a9f3b" width=730 height=480>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/16b8164f-916f-4e08-b643-49c6596b4e4e" width=700 height=450>
+
+- 로드밸런서 HTTPS:443 리스너 설정시 인증서 *.ssgfinal1jo.shop 선택
+
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/4c9e8df9-fc5a-4894-946b-0a735c0a8c1c" width=900 height=200>
+
+- 이제 `https://subdomain.ssgfinal1jo.shop:443`으로 통신 가능
+- 서브도메인명으로 로드밸런서 443 리스너 라우팅 가능 -> '보안통신'
+
+<br>
+
+<img src="https://github.com/kksung/ALB-API/assets/110016279/131f7428-d0d3-4ce3-bbb6-963c06ef30ef" width=850 height=400>
+
+- Talend를 통해 `https://appserver.ssgfinal1jo.shop/login` 으로 로그인 API 테스트 성공
 
 <br>
 
