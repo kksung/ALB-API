@@ -64,7 +64,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/dfb77095-5f62-4b01-b600-ca1a96baff3c" width=780 height=330>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/dfb77095-5f62-4b01-b600-ca1a96baff3c" width=900 height=330>
 
 - 보안그룹 로드밸런서 리스너 포트 Open
 
@@ -77,7 +77,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/da3dfdd4-1267-4957-adbc-de6c298024ef" width=900 height=430>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/da3dfdd4-1267-4957-adbc-de6c298024ef" width=900 height=380>
 
 - App 서버단에서는 inbound 규칙을 로드밸런서 보안그룹으로 설정
 
@@ -95,7 +95,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/cac9062b-18ac-4fbd-a4a8-951ff2cfc801" width=975 height=200>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/cac9062b-18ac-4fbd-a4a8-951ff2cfc801" width=950 height=180>
 <img src="https://github.com/kksung/ALB-API/assets/110016279/c760922b-ceb6-40db-93ab-0094ac6074ea" width=850 height=200>
 
 - 로드밸런서 헬스체크 -> 대상그룹 Healthy 상태 설정
@@ -110,25 +110,25 @@ nvm --version
 <br>
 
 ## ALB HTTPS 보안 통신 설정
-<img src="https://github.com/kksung/ALB-API/assets/110016279/f5d87034-7779-483e-853a-33e0258877c6" width=750 height=100>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/f5d87034-7779-483e-853a-33e0258877c6" width=900 height=100>
 
 - 가비아에서 도메인 구매 (ssgfinal1jo.shop)
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/a5f942ca-a4d3-4867-b682-d5d190b7614c" width=800 height=450>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/a5f942ca-a4d3-4867-b682-d5d190b7614c" width=750 height=430>
 
 - Route53 도메인 인증 (AWS단에서 도메인 소유 인증) -> 호스팅 영역 생성
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/f7df3748-e701-491d-8231-544ed5a60d6e" width=800 height=300>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/f7df3748-e701-491d-8231-544ed5a60d6e" width=900 height=300>
 
 - NS 유형의 라우팅 대상 4개 -> 가비아 들어가서 입력
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/9420f098-81a0-4023-ae1d-660667538153" width=850 height=330>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/9420f098-81a0-4023-ae1d-660667538153" width=850 height=300>
 
 - 서브도메인까지 포함되는 인증서 발급 (* -> 애스터리스크로 발급)
 
@@ -140,28 +140,28 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/1a152bcc-5162-44b2-91d0-750ed48e8a14" width=830 height=500>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/1a152bcc-5162-44b2-91d0-750ed48e8a14" width=900 height=530>
 
 - 예시, 서브도메인별로 A레코드 생성 -> LB별 지정 확인
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/a46b4158-b4e7-4446-a77c-4e387f0a9f3b" width=730 height=480>
-<img src="https://github.com/kksung/ALB-API/assets/110016279/16b8164f-916f-4e08-b643-49c6596b4e4e" width=700 height=450>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/a46b4158-b4e7-4446-a77c-4e387f0a9f3b" width=680 height=430>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/16b8164f-916f-4e08-b643-49c6596b4e4e" width=680 height=430>
 
 - 로드밸런서 HTTPS:443 리스너 설정시 인증서 *.ssgfinal1jo.shop 선택
 
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/4c9e8df9-fc5a-4894-946b-0a735c0a8c1c" width=900 height=200>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/4c9e8df9-fc5a-4894-946b-0a735c0a8c1c" width=980 height=180>
 
 - 이제 `https://subdomain.ssgfinal1jo.shop:443`으로 통신 가능
 - 서브도메인명으로 로드밸런서 443 리스너 라우팅 가능 -> '보안통신'
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/131f7428-d0d3-4ce3-bbb6-963c06ef30ef" width=850 height=400>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/131f7428-d0d3-4ce3-bbb6-963c06ef30ef" width=900 height=380>
 
 - Talend를 통해 `https://appserver.ssgfinal1jo.shop/login` 으로 로그인 API 테스트 성공
 
