@@ -7,20 +7,26 @@
 ### ReactNative - Expo App (Frontend)
 > 설치 프로세스
 1. git clone
-2. sudo apt-get update → sudo apt-get upgrade
+2. sudo apt-get update -> sudo apt-get upgrade
 3. sudo apt install nodejs 대신에, nvm으로 특정 버전 바로 설치
-   - NVM으로 Node 설치 진행 순서
+
+<br>
+
+- NVM으로 Node 설치 진행 순서
 ```
 sudo apt-get install curl gnupg2 -y
 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-=> Close and reopen your terminal to start using nvm
+-> Close and reopen your terminal to start using nvm
 
 source ~/.bashrc
 
 nvm --version
 ```
-4. nvm install 18.19.0 → nvm ls → nvm use 18.19.0
+
+<br>
+
+4. nvm install 18.19.0 -> nvm ls -> nvm use 18.19.0
 5. cd 폴더 -> npm install (package.json에 기재되어있는 모듈 모두 설치)
 6. npx expo start
 !expo://ec2publicip:8081로 접근해야하고 인바운드 규칙에 포트를 열어줘야 접근 가능
@@ -64,7 +70,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/dfb77095-5f62-4b01-b600-ca1a96baff3c" width=900 height=330>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/dfb77095-5f62-4b01-b600-ca1a96baff3c" width=830 height=300>
 
 - 보안그룹 로드밸런서 리스너 포트 Open
 
@@ -77,7 +83,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/da3dfdd4-1267-4957-adbc-de6c298024ef" width=900 height=380>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/da3dfdd4-1267-4957-adbc-de6c298024ef" width=900 height=400>
 
 - App 서버단에서는 inbound 규칙을 로드밸런서 보안그룹으로 설정
 
@@ -110,19 +116,19 @@ nvm --version
 <br>
 
 ## ALB HTTPS 보안 통신 설정
-<img src="https://github.com/kksung/ALB-API/assets/110016279/f5d87034-7779-483e-853a-33e0258877c6" width=900 height=100>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/f5d87034-7779-483e-853a-33e0258877c6" width=850 height=90>
 
 - 가비아에서 도메인 구매 (ssgfinal1jo.shop)
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/a5f942ca-a4d3-4867-b682-d5d190b7614c" width=750 height=430>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/a5f942ca-a4d3-4867-b682-d5d190b7614c" width=750 height=400>
 
 - Route53 도메인 인증 (AWS단에서 도메인 소유 인증) -> 호스팅 영역 생성
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/f7df3748-e701-491d-8231-544ed5a60d6e" width=900 height=300>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/f7df3748-e701-491d-8231-544ed5a60d6e" width=850 height=250>
 
 - NS 유형의 라우팅 대상 4개 -> 가비아 들어가서 입력
 
@@ -134,7 +140,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/ee766b0a-e5be-4942-a428-bbfe8f70d898" width=800 height=450>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/ee766b0a-e5be-4942-a428-bbfe8f70d898" width=750 height=400>
 
 - 서브도메인 A레코드 생성 -> 각 LB별로 지정
 
@@ -154,7 +160,7 @@ nvm --version
 
 <br>
 
-<img src="https://github.com/kksung/ALB-API/assets/110016279/4c9e8df9-fc5a-4894-946b-0a735c0a8c1c" width=980 height=180>
+<img src="https://github.com/kksung/ALB-API/assets/110016279/4c9e8df9-fc5a-4894-946b-0a735c0a8c1c" width=900 height=140>
 
 - 이제 `https://subdomain.ssgfinal1jo.shop:443`으로 통신 가능
 - 서브도메인명으로 로드밸런서 443 리스너 라우팅 가능 -> '보안통신'
@@ -170,7 +176,7 @@ nvm --version
 ## Troubleshooting & 유의사항
 ### 1 - ReactNative 접근 로드밸런서 설정 
 - AWS단에서 exp://~:8081로 실행되어 접근해야하는 문제
-- url 리다이렉트가 aws단에서는 되지 않아 구현 x
+- Expo URL 리다이렉트를 AWS 단에서는 지원하지 않아 구현 X 
 
 <br>
 
