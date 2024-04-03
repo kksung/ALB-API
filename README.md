@@ -174,16 +174,17 @@ nvm --version
 <br>
 
 ## Troubleshooting & 유의사항
-### 1 - ReactNative 접근 로드밸런서 설정 
+### 1 - ReactNative (Front-End) 접근 로드밸런서 설정 
 - AWS단에서 exp://~:8081로 실행되어 접근해야하는 문제
 - Expo URL 리다이렉트를 AWS 단에서는 지원하지 않아 구현 X
 
 <br>
 
-### 2 - 로드밸런서 생성
-- App서버단(private subnet에 위치) -> 로드밸런서가 내부로 트래픽을 전달하더라도, 내부가 아닌 외부로
+### 2 - API 통신 로드밸런서 생성
+- 모바일 앱 백엔드 서버 -> private subnet에 위치
+- 로드밸런서가 백엔드 서버로, 즉 대상 그룹 내 private subnet instance에 트래픽을 전달하더라도
 
-  생성해야함 (Internetfacing)
+  내부가 아닌 외부로 생성 (Internetfacing)
 
 <br>
 
